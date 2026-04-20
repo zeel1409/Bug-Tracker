@@ -4,7 +4,7 @@
   "description": "MERN Bug Tracker Application",
   "main": "index.js",
   "scripts": {
-    "install:all": "cd server && npm install && cd ../client && npm install",
+    "install:all": "cd server && npm install && cd ../client && npm install --include=dev",
     "build": "cd client && npm run build",
     "start": "cd server && node index.js"
   },
