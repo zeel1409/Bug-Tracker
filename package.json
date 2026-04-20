@@ -1,16 +1,15 @@
 {
-  "name": "web-project",
+  "name": "bugtracker",
   "version": "1.0.0",
-  "description": "",
+  "description": "MERN Bug Tracker Application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "install:all": "cd server && npm install && cd ../client && npm install",
+    "build": "cd client && npm run build",
+    "start": "cd server && node index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
-  "dependencies": {
-    "@anthropic-ai/sdk": "^0.89.0"
-  }
+  "type": "commonjs"
 }
