@@ -16,7 +16,18 @@ const app = express();
 // middleware
 app.use(helmet());
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:5173',
+  origin: function(origin, callback) {
+    const allowedOrigins = [
+      'http://localhost:5173',
+      process.env.CLIENT_URL
+    ].filter(Boolean);
+    // Allow requests with no origin (mobile apps, curl, etc)
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(null, true); // Allow all origins for now
+    }
+  },
   credentials: true
 }));
 app.use(express.json());
